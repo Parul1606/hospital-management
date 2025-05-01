@@ -49,4 +49,10 @@ public class DoctorController {
         Doctor doctor = doctorMapDb.get(id);
         return doctor;
     }
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteDoctorById(@PathVariable int id){
+        doctorMapDb.remove(id);
+        return "Doctor Deleted succesfully with id " + id;
+    }
 }
